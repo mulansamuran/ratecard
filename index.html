@@ -3,385 +3,380 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rate Card Les Bahasa Jepang</title>
+<title>Rate Card Mokuren</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
-    --pink: #FF6B9D;
-    --yellow: #FFD93D;
-    --mint: #6BCB77;
-    --blue: #4ECDC4;
-    --orange: #FF9F43;
-    --purple: #A29BFE;
-    --dark: #2D2D2D;
-    --bg: #FFF8F0;
+    --lavender: #9B7FD4;
+    --lavender-light: #C4A8F0;
+    --lavender-pale: #F0EAFF;
+    --sage: #7DBF8E;
+    --sage-pale: #E8F5EB;
+    --magnolia: #FDF8FF;
+    --yellow: #F9C74F;
+    --peach: #FFB347;
+    --rose: #E8A0BF;
+    --dark: #2D2438;
+    --bg: #FAF7FF;
   }
-  a {
-    text-decoration: none;
-  }
-  
+ 
   body {
     background: var(--bg);
     background-image:
-      radial-gradient(circle at 10% 20%, #FFE4F0 0%, transparent 40%),
-      radial-gradient(circle at 90% 80%, #E4F8FF 0%, transparent 40%),
-      radial-gradient(circle at 50% 50%, #FFFDE4 0%, transparent 60%);
+      radial-gradient(circle at 15% 15%, #EDE4FF 0%, transparent 45%),
+      radial-gradient(circle at 85% 85%, #E4F5E8 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, #FFF8F0 0%, transparent 60%);
     font-family: 'Nunito', sans-serif;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     padding: 32px 16px;
+    position: relative;
   }
 
-  body::before {
-    content: '✦ ◎ ✿ ★ ◇ ✦ ◎ ✿';
+  a {
+    text-decoration: none;
+  }
+ 
+  /* Floating petals background */
+  .petals-bg {
     position: fixed;
-    top: 20px;
-    left: 0; right: 0;
-    text-align: center;
-    font-size: 20px;
-    color: #FFD93D;
-    opacity: 0.3;
-    letter-spacing: 24px;
-    animation: floatRow 8s ease-in-out infinite;
-  }
-
-  @keyframes floatRow {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(8px); }
-  }
-
-  .card {
-    width: 100%;
-    max-width: 580px;
-    position: relative;
-    animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-  }
-
-  @keyframes popIn {
-    from { opacity: 0; transform: scale(0.9) translateY(20px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
-  }
-
-  .header {
-    background: var(--pink);
-    border-radius: 28px 28px 0 0;
-    padding: 28px 32px 32px;
-    position: relative;
+    inset: 0;
+    pointer-events: none;
     overflow: hidden;
-    text-align: center;
+    z-index: 0;
   }
-
+  .petal {
+    position: absolute;
+    font-size: 18px;
+    opacity: 0.15;
+    animation: floatPetal linear infinite;
+  }
+  .petal:nth-child(1)  { left: 5%;  top: 10%; font-size: 22px; animation-duration: 9s;  animation-delay: 0s; }
+  .petal:nth-child(2)  { left: 20%; top: 70%; font-size: 14px; animation-duration: 11s; animation-delay: 2s; }
+  .petal:nth-child(3)  { left: 40%; top: 20%; font-size: 20px; animation-duration: 8s;  animation-delay: 4s; }
+  .petal:nth-child(4)  { left: 60%; top: 80%; font-size: 16px; animation-duration: 13s; animation-delay: 1s; }
+  .petal:nth-child(5)  { left: 75%; top: 30%; font-size: 24px; animation-duration: 10s; animation-delay: 3s; }
+  .petal:nth-child(6)  { left: 90%; top: 55%; font-size: 18px; animation-duration: 7s;  animation-delay: 5s; }
+  .petal:nth-child(7)  { left: 30%; top: 50%; font-size: 12px; animation-duration: 14s; animation-delay: 2s; }
+  .petal:nth-child(8)  { left: 55%; top: 5%;  font-size: 20px; animation-duration: 9s;  animation-delay: 6s; }
+  @keyframes floatPetal {
+    0%   { transform: translateY(0px) rotate(0deg);   opacity: 0.15; }
+    50%  { transform: translateY(-20px) rotate(180deg); opacity: 0.25; }
+    100% { transform: translateY(0px) rotate(360deg); opacity: 0.15; }
+  }
+ 
+  .card {
+    width: 100%; max-width: 600px;
+    position: relative; z-index: 1;
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    filter: drop-shadow(0 20px 40px rgba(155, 127, 212, 0.2));
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.88) translateY(24px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+ 
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #9B7FD4 0%, #B99AE8 50%, #C4A8F0 100%);
+    border-radius: 28px 28px 0 0;
+    padding: 30px 32px 36px;
+    position: relative; overflow: hidden; text-align: center;
+  }
+ 
+  /* Magnolia decorative blobs */
   .header::before {
     content: '';
-    position: absolute;
-    width: 200px; height: 200px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 50%;
-    top: -60px; right: -40px;
+    position: absolute; width: 220px; height: 220px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%; top: -80px; right: -50px;
   }
-
   .header::after {
     content: '';
-    position: absolute;
-    width: 120px; height: 120px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 50%;
-    bottom: -30px; left: 20px;
+    position: absolute; width: 140px; height: 140px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%; bottom: -40px; left: 10px;
   }
-
-  .emoji-row {
-    font-size: 28px;
-    margin-bottom: 10px;
-    letter-spacing: 6px;
-    animation: bounce 2s ease-in-out infinite;
+ 
+  /* Floating magnolia flowers in header */
+  .header-flowers {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
   }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+  .hf { position: absolute; font-size: 28px; opacity: 0.18; animation: spinFloat 6s ease-in-out infinite; }
+  .hf:nth-child(1) { top: 8px;  left: 12px;  font-size: 22px; animation-delay: 0s; }
+  .hf:nth-child(2) { top: 12px; right: 16px; font-size: 18px; animation-delay: 1s; }
+  .hf:nth-child(3) { bottom: 10px; left: 50%; font-size: 16px; animation-delay: 2s; }
+  @keyframes spinFloat {
+    0%,100% { transform: rotate(0deg) scale(1); }
+    50%      { transform: rotate(15deg) scale(1.1); }
   }
-
+ 
+  .brand-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.22);
+    color: #fff;
+    font-size: 11px; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 4px 16px; border-radius: 999px;
+    margin-bottom: 12px;
+    position: relative; z-index: 1;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+ 
   .header h1 {
     font-family: 'Fredoka', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.1;
-    position: relative;
-    z-index: 1;
+    font-size: 40px; font-weight: 700;
+    color: #fff; line-height: 1;
+    position: relative; z-index: 1;
+    text-shadow: 0 2px 12px rgba(100,60,180,0.3);
   }
-
+ 
   .header h1 .jp {
     display: block;
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    opacity: 0.8;
-    margin-top: 4px;
-    letter-spacing: 3px;
+    font-size: 15px; font-weight: 400;
+    opacity: 0.75; margin-top: 5px;
+    letter-spacing: 4px;
   }
-
-  .pills {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-top: 14px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-  }
-
-  .pill {
-    background: rgba(255,255,255,0.25);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 4px 14px;
-    border-radius: 999px;
+ 
+  .header h1 .tagline {
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px; font-weight: 700;
+    opacity: 0.85; margin-top: 3px;
     letter-spacing: 0.5px;
   }
-
-  .wavy {
-    display: block;
-    width: 100%;
-    height: 32px;
-    background: var(--pink);
-    clip-path: ellipse(55% 100% at 50% 0%);
-    margin-bottom: -1px;
+ 
+  .pills {
+    display: flex; gap: 8px; justify-content: center;
+    margin-top: 16px; flex-wrap: wrap;
+    position: relative; z-index: 1;
   }
-
-  .body {
-    background: #fff;
-    padding: 8px 24px 24px;
+  .pill {
+    background: rgba(255,255,255,0.2);
+    color: #fff; font-size: 12px; font-weight: 700;
+    padding: 5px 14px; border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(4px);
   }
-
-  .section-label {
-    text-align: center;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #ccc;
-    margin: 20px 0 14px;
-  }
-
-  .pkg-group {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
-
-  .pkg {
-    border-radius: 20px;
-    padding: 18px 20px;
+ 
+  /* Wavy bottom of header */
+  .wavy-wrap {
     position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, #9B7FD4, #C4A8F0);
+    height: 36px; overflow: hidden;
+  }
+  .wavy-wrap svg { display: block; width: 100%; height: 100%; }
+ 
+  /* ── BODY ── */
+  .body { background: #fff; padding: 6px 24px 24px; }
+ 
+  .section-label {
+    text-align: center; font-size: 11px; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: #ccc; margin: 18px 0 14px;
+  }
+ 
+  /* TABS */
+  .tab-wrap {
+    display: flex; background: var(--lavender-pale);
+    border-radius: 999px; padding: 4px; margin: 14px 0 18px; gap: 4px;
+  }
+  .tab-btn {
+    flex: 1; border: none; background: transparent; border-radius: 999px;
+    padding: 9px 12px; font-family: 'Nunito', sans-serif;
+    font-size: 13px; font-weight: 800; color: #aaa;
+    cursor: pointer; transition: all 0.25s ease;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+  .tab-btn.active {
+    background: var(--lavender); color: #fff;
+    box-shadow: 0 3px 12px rgba(155,127,212,0.4);
+  }
+  .tab-content { display: none; flex-direction: column; gap: 14px; }
+  .tab-content.active { display: flex; }
+ 
+  /* PACKAGE CARD */
+  .pkg {
+    border-radius: 20px; padding: 18px 20px;
+    position: relative; overflow: hidden;
     transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
     cursor: default;
   }
-
-  .pkg:hover { transform: scale(1.02); }
-
-  .pkg.conversation { background: linear-gradient(135deg, #FFF0F5 0%, #FFE4F0 100%); border: 2px solid #FFADD0; }
-  .pkg.ujian { background: linear-gradient(135deg, #F0FFF4 0%, #D4F8DC 100%); border: 2px solid #95E8A4; }
-
+  .pkg:hover { transform: scale(1.015); }
+ 
   .pkg-deco {
-    position: absolute;
-    right: -10px; top: -10px;
-    font-size: 72px;
-    opacity: 0.08;
-    line-height: 1;
-    pointer-events: none;
+    position: absolute; right: -8px; top: -8px;
+    font-size: 70px; opacity: 0.07; line-height: 1; pointer-events: none;
   }
-
-  .pkg-top {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
+ 
+  .pkg-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
   .pkg-icon { font-size: 28px; line-height: 1; flex-shrink: 0; }
   .pkg-title-wrap { flex: 1; }
-
+ 
   .pkg-badge {
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 999px;
-    margin-bottom: 4px;
-    display: inline-block;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 3px 10px;
+    border-radius: 999px; margin-bottom: 4px; display: inline-block;
   }
-
-  .pkg.conversation .pkg-badge { background: var(--pink); color: #fff; }
-  .pkg.ujian .pkg-badge { background: var(--mint); color: #fff; }
-
-  .pkg-name {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--dark);
+  .pkg-name { font-family: 'Fredoka', sans-serif; font-size: 20px; font-weight: 600; color: var(--dark); }
+  .pkg-name-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; color: #bbb; margin-top: 1px; }
+ 
+  .feats { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+  .feat { font-size: 12.5px; color: #666; display: flex; align-items: center; gap: 8px; }
+  .feat-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+ 
+  /* PRIVAT colors — lavender theme */
+  .pkg.conversation {
+    background: linear-gradient(135deg, #F5EEFF 0%, #EBE0FF 100%);
+    border: 2px solid #C4A8F0;
   }
-
-  .pkg-name-jp {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 11px;
-    color: #aaa;
-    margin-top: 1px;
+  .pkg.ujian {
+    background: linear-gradient(135deg, #EAFAF0 0%, #D5F2DF 100%);
+    border: 2px solid #A8D9B5;
   }
-
-  .feats {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 14px;
+ 
+  .pkg.conversation .pkg-badge { background: var(--lavender); color: #fff; }
+  .pkg.ujian        .pkg-badge { background: var(--sage); color: #fff; }
+  .pkg.conversation .feat-dot  { background: var(--lavender); }
+  .pkg.ujian        .feat-dot  { background: var(--sage); }
+ 
+  /* GRUP colors — peach + rose */
+  .pkg.grup-conv {
+    background: linear-gradient(135deg, #FFF3F9 0%, #FFE4F1 100%);
+    border: 2px solid #F0B8D4;
   }
-
-  .feat {
-    font-size: 12.5px;
-    color: #555;
-    display: flex;
-    align-items: center;
-    gap: 7px;
+  .pkg.grup-ujian {
+    background: linear-gradient(135deg, #FFFBEC 0%, #FFF0C8 100%);
+    border: 2px solid #F9D87A;
   }
-
-  .feat-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .pkg.conversation .feat-dot { background: var(--pink); }
-  .pkg.ujian .feat-dot { background: var(--mint); }
-
-  .tiers {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .tier {
-    border-radius: 14px;
-    padding: 12px 14px;
-    text-align: center;
-  }
-
-  .pkg.conversation .tier.per-sesi { background: #fff; border: 2px dashed #FFADD0; }
-  .pkg.conversation .tier.bulanan  { background: var(--pink); }
-  .pkg.ujian .tier.per-sesi        { background: #fff; border: 2px dashed #95E8A4; }
-  .pkg.ujian .tier.bulanan         { background: var(--mint); }
-
-  .tier-label {
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-
-  .pkg.conversation .tier.per-sesi .tier-label { color: var(--pink); }
-  .pkg.conversation .tier.bulanan  .tier-label { color: rgba(255,255,255,0.8); }
-  .pkg.ujian .tier.per-sesi        .tier-label { color: var(--mint); }
-  .pkg.ujian .tier.bulanan         .tier-label { color: rgba(255,255,255,0.85); }
-
-  .tier-price {
-    font-family: 'Fredoka', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1;
-    color: var(--dark);
-  }
-
-  .tier.bulanan .tier-price { color: #fff; }
-
-  .tier-sub {
-    font-size: 10px;
-    color: #aaa;
-    margin-top: 3px;
-  }
-
-  .tier.bulanan .tier-sub { color: rgba(255,255,255,0.75); }
-
+ 
+  .pkg.grup-conv  .pkg-badge { background: var(--rose); color: #fff; }
+  .pkg.grup-ujian .pkg-badge { background: var(--peach); color: #fff; }
+  .pkg.grup-conv  .feat-dot  { background: var(--rose); }
+  .pkg.grup-ujian .feat-dot  { background: var(--peach); }
+ 
+  /* TIERS */
+  .tiers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .tier { border-radius: 14px; padding: 10px; text-align: center; }
+  .tier-label { font-size: 9.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .tier-price { font-family: 'Fredoka', sans-serif; font-size: 24px; font-weight: 700; line-height: 1; color: var(--dark); }
+  .tier-sub { font-size: 9.5px; color: #aaa; margin-top: 3px; }
   .tier-save {
-    display: inline-block;
-    background: var(--yellow);
-    color: var(--dark);
-    font-size: 9px;
-    font-weight: 800;
-    padding: 2px 7px;
-    border-radius: 999px;
-    margin-top: 4px;
-    letter-spacing: 0.5px;
+    display: inline-block; background: var(--yellow);
+    color: var(--dark); font-size: 9px; font-weight: 800;
+    padding: 2px 7px; border-radius: 999px; margin-top: 4px;
   }
-
-  .squiggle {
-    text-align: center;
-    font-size: 18px;
-    color: #ddd;
-    letter-spacing: 4px;
-    margin: 4px 0;
+ 
+  /* Privat tier colors */
+  .pkg.conversation .tier.per-sesi { background: #fff; border: 2px dashed #C4A8F0; }
+  .pkg.conversation .tier.per-sesi .tier-label { color: var(--lavender); }
+  .pkg.conversation .tier.bulanan  { background: var(--lavender); }
+  .pkg.conversation .tier.bulanan  .tier-label { color: rgba(255,255,255,0.8); }
+  .pkg.conversation .tier.pelajar  { background: #B99AE8; }
+  .pkg.conversation .tier.pelajar  .tier-label { color: rgba(255,255,255,0.8); }
+ 
+  .pkg.ujian .tier.per-sesi { background: #fff; border: 2px dashed #A8D9B5; }
+  .pkg.ujian .tier.per-sesi .tier-label { color: var(--sage); }
+  .pkg.ujian .tier.bulanan  { background: var(--sage); }
+  .pkg.ujian .tier.bulanan  .tier-label { color: rgba(255,255,255,0.85); }
+  .pkg.ujian .tier.pelajar  { background: #5FAD70; }
+  .pkg.ujian .tier.pelajar  .tier-label { color: rgba(255,255,255,0.85); }
+ 
+  /* Grup tier colors */
+  .pkg.grup-conv .tier.per-sesi { background: #fff; border: 2px dashed #F0B8D4; }
+  .pkg.grup-conv .tier.per-sesi .tier-label { color: var(--rose); }
+  .pkg.grup-conv .tier.bulanan  { background: var(--rose); }
+  .pkg.grup-conv .tier.bulanan  .tier-label { color: rgba(255,255,255,0.8); }
+  .pkg.grup-conv .tier.pelajar  { background: #D4779F; }
+  .pkg.grup-conv .tier.pelajar  .tier-label { color: rgba(255,255,255,0.8); }
+ 
+  .pkg.grup-ujian .tier.per-sesi { background: #fff; border: 2px dashed #F9D87A; }
+  .pkg.grup-ujian .tier.per-sesi .tier-label { color: #C8960A; }
+  .pkg.grup-ujian .tier.bulanan  { background: var(--peach); }
+  .pkg.grup-ujian .tier.bulanan  .tier-label { color: rgba(255,255,255,0.8); }
+  .pkg.grup-ujian .tier.pelajar  { background: #E8922A; }
+  .pkg.grup-ujian .tier.pelajar  .tier-label { color: rgba(255,255,255,0.85); }
+ 
+  .tier.bulanan .tier-price,
+  .tier.pelajar .tier-price { color: #fff; }
+  .tier.bulanan .tier-sub,
+  .tier.pelajar .tier-sub   { color: rgba(255,255,255,0.75); }
+ 
+  .squiggle { text-align: center; font-size: 16px; color: #ddd; letter-spacing: 6px; margin: 2px 0; }
+  .grup-note {
+    text-align: center; font-size: 12px; color: #999;
+    background: var(--lavender-pale); border-radius: 12px;
+    padding: 8px 14px; border: 1.5px dashed #C4A8F0;
   }
-
+ 
+  /* INFO STRIP */
   .info-strip {
-    background: linear-gradient(135deg, #FFF9E6, #FFF0FB);
-    border-radius: 16px;
-    padding: 14px 18px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    border: 2px solid #FFE9A0;
-    margin-top: 4px;
+    background: linear-gradient(135deg, #F5EEFF, #EAFAF0);
+    border-radius: 16px; padding: 14px 18px;
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 8px; border: 2px solid #D8C8F8; margin-top: 16px;
   }
-
   .info-item { text-align: center; }
   .info-emoji { font-size: 18px; display: block; margin-bottom: 2px; }
-  .info-key {
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #bbb;
-    display: block;
-    margin-bottom: 2px;
-  }
+  .info-key { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #bbb; display: block; margin-bottom: 2px; }
   .info-val { font-size: 12px; font-weight: 800; color: var(--dark); }
-
+ 
+  /* FOOTER */
   .footer {
     background: var(--dark);
     border-radius: 0 0 28px 28px;
     padding: 14px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 8px;
   }
-
-  .footer-text { color: #fff; font-size: 12px; font-weight: 700; opacity: 0.8; }
-  .footer-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; color: var(--yellow); }
-
+  .footer-brand {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .footer-flower { font-size: 18px; animation: spinFloat 5s ease-in-out infinite; }
+  .footer-text { color: #fff; font-size: 13px; font-weight: 800; }
+  .footer-text span { color: var(--lavender-light); }
+  .footer-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: var(--yellow); opacity: 0.85; }
+ 
   @media (max-width: 420px) {
-    .header { padding: 22px 20px 26px; }
-    .header h1 { font-size: 26px; }
-    .body { padding: 8px 16px 20px; }
+    .header { padding: 22px 18px 28px; }
+    .header h1 { font-size: 32px; }
+    .body { padding: 6px 14px 20px; }
+    .tiers { gap: 6px; }
+    .tier-price { font-size: 20px; }
   }
 </style>
 </head>
 <body>
+ 
+<!-- Floating petals -->
+<div class="petals-bg">
+  <div class="petal">🌸</div>
+  <div class="petal">🌷</div>
+  <div class="petal">✿</div>
+  <div class="petal">🌸</div>
+  <div class="petal">🌺</div>
+  <div class="petal">✦</div>
+  <div class="petal">🌸</div>
+  <div class="petal">🌷</div>
+</div>
+ 
 <div class="card">
-
+ 
+  <!-- HEADER -->
   <div class="header">
-    <div class="emoji-row">🌸 🗾 ✨</div>
+    <div class="header-flowers">
+      <div class="hf">🌸</div>
+      <div class="hf">🌷</div>
+      <div class="hf">✿</div>
+    </div>
+    <div class="brand-badge">🌸 Rate Card 2026 🌸</div>
     <h1>
-      Les Privat Bahasa Jepang
-      <span class="jp">日本語プライベートレッスン</span>
+      Mokuren
+      <span class="jp">モクレン</span>
+      <span class="tagline">Les Privat Bahasa Jepang bareng Mulan</span>
     </h1>
     <div class="pills">
       <span class="pill">⏱ 75 menit / sesi</span>
@@ -389,56 +384,69 @@
       <span class="pill">💻 Online</span>
     </div>
   </div>
-  <div class="wavy"></div>
-
+ 
+  <!-- Wavy transition -->
+  <div class="wavy-wrap">
+    <svg viewBox="0 0 600 36" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C100,36 200,0 300,20 C400,36 500,10 600,0 L600,36 L0,36 Z" fill="white"/>
+    </svg>
+  </div>
+ 
   <div class="body">
     <div class="section-label">✦ Pilih Kelasmu ✦</div>
-
-    <div class="pkg-group">
-
-      <!-- Conversation -->
-      <a href="https://wa.me/6282139265577?text=Halo%20saya%20ingin%20mendaftar%20Kelas%20Percakapan">
-        <div class="pkg conversation">
-        <div class="pkg-deco">💬</div>
-        <div class="pkg-top">
-          <div class="pkg-icon">🗣️</div>
-          <div class="pkg-title-wrap">
-            <span class="pkg-badge">Conversation</span>
-            <div class="pkg-name">Kelas Percakapan</div>
-            <div class="pkg-name-jp">会話クラス</div>
-          </div>
-        </div>
-        <div class="feats">
-          <div class="feat"><span class="feat-dot"></span>Latihan speaking natural sehari-hari</div>
-          <div class="feat"><span class="feat-dot"></span>Koreksi pelafalan & intonasi</div>
-          <div class="feat"><span class="feat-dot"></span>Roleplay situasi nyata</div>
-          <div class="feat"><span class="feat-dot"></span>Cocok untuk pemula hingga menengah</div>
-        </div>
-        <div class="tiers">
-          <div class="tier per-sesi">
-            <div class="tier-label">Per Sesi</div>
-            <div class="tier-price">120K</div>
-            <div class="tier-sub">Rp 120.000</div>
-          </div>
-          <div class="tier bulanan">
-            <div class="tier-label">Paket Bulanan</div>
-            <div class="tier-price">900K</div>
-            <div class="tier-sub">8 sesi / bulan</div>
-            <div class="tier-save">✨ Hemat 6%</div>
-          </div>
-        </div>
-      </div>
-      </a>
+ 
+    <!-- TABS -->
+    <div class="tab-wrap">
+      <button class="tab-btn active" onclick="switchTab('privat')">👤 Privat (1-on-1)</button>
+      <button class="tab-btn" onclick="switchTab('grup')">👥 Grup (2 Orang)</button>
+    </div>
+ 
+    <!-- TAB PRIVAT -->
+    <div class="tab-content active" id="tab-privat">
       
+      <a href="https://wa.me/6282139265577?text=Halo%20saya%20ingin%20mendaftar%20Kelas%20Privat%20Percakapan">
+        <div class="pkg conversation">
+          <div class="pkg-deco">🌸</div>
+          <div class="pkg-top">
+            <div class="pkg-icon">🗣️</div>
+            <div class="pkg-title-wrap">
+              <span class="pkg-badge">Conversation</span>
+              <div class="pkg-name">Kelas Percakapan</div>
+              <div class="pkg-name-jp">会話クラス</div>
+            </div>
+          </div>
+          <div class="feats">
+            <div class="feat"><span class="feat-dot"></span>Latihan speaking natural sehari-hari</div>
+            <div class="feat"><span class="feat-dot"></span>Koreksi pelafalan & intonasi</div>
+            <div class="feat"><span class="feat-dot"></span>Roleplay situasi nyata</div>
+            <div class="feat"><span class="feat-dot"></span>Cocok untuk pemula hingga menengah</div>
+          </div>
+          <div class="tiers">
+            <div class="tier per-sesi">
+              <div class="tier-label">Per Sesi</div>
+              <div class="tier-price">120K</div>
+            </div>
+            <div class="tier bulanan">
+              <div class="tier-label">Paket Bulanan</div>
+              <div class="tier-price">900K</div>
+              <div class="tier-sub">8 sesi / bulan</div>
+              <div class="tier-save">✨ Hemat 6%</div>
+            </div>
+            <div class="tier pelajar">
+              <div class="tier-label">🎒 Pelajar</div>
+              <div class="tier-price">750K</div>
+              <div class="tier-sub">8 sesi / bulan</div>
+              <div class="tier-save">🏫 Hemat 17%</div>
+            </div>
+          </div>
+        </div>
+      </a>
 
       <div class="squiggle">∿ ∿ ∿</div>
-
-
-
-      <!-- Ujian -->
-      <a href="https://wa.me/6282139265577?text=Halo%20saya%20ingin%20mendaftar%20Kelas%20JLPT%20N5%20%26%20N4">
+      
+      <a href="https://wa.me/6282139265577?text=Halo%20saya%20ingin%20mendaftar%20Kelas%20Privat%20Ujian%20JLPT%20N5%20%26%20N4">
         <div class="pkg ujian">
-          <div class="pkg-deco">📝</div>
+          <div class="pkg-deco">🌿</div>
           <div class="pkg-top">
             <div class="pkg-icon">📚</div>
             <div class="pkg-title-wrap">
@@ -457,7 +465,6 @@
             <div class="tier per-sesi">
               <div class="tier-label">Per Sesi</div>
               <div class="tier-price">100K</div>
-              <div class="tier-sub">Rp 100.000</div>
             </div>
             <div class="tier bulanan">
               <div class="tier-label">Paket Bulanan</div>
@@ -465,13 +472,106 @@
               <div class="tier-sub">8 sesi / bulan</div>
               <div class="tier-save">✨ Hemat 6%</div>
             </div>
+            <div class="tier pelajar">
+              <div class="tier-label">🎒 Pelajar</div>
+              <div class="tier-price">700K</div>
+              <div class="tier-sub">8 sesi / bulan</div>
+              <div class="tier-save">🏫 Hemat 13%</div>
+            </div>
           </div>
         </div>
       </a>
-      
 
     </div>
-
+ 
+    <!-- TAB GRUP -->
+    <div class="tab-content" id="tab-grup">
+ 
+      <div class="grup-note">💡 Harga per orang · Maks. 2 orang per sesi</div>
+      
+      <a href="https://wa.me/6282139265577?text=Halo%20saya%20ingin%20mendaftar%20Kelas%20Grup%20Percakapan">
+        <div class="pkg grup-conv">
+          <div class="pkg-deco">🌸</div>
+          <div class="pkg-top">
+            <div class="pkg-icon">🗣️</div>
+            <div class="pkg-title-wrap">
+              <span class="pkg-badge">Conversation · Grup</span>
+              <div class="pkg-name">Kelas Percakapan</div>
+              <div class="pkg-name-jp">会話クラス（グループ）</div>
+            </div>
+          </div>
+          <div class="feats">
+            <div class="feat"><span class="feat-dot"></span>Latihan speaking natural sehari-hari</div>
+            <div class="feat"><span class="feat-dot"></span>Koreksi pelafalan & intonasi</div>
+            <div class="feat"><span class="feat-dot"></span>Roleplay & diskusi bersama teman</div>
+            <div class="feat"><span class="feat-dot"></span>Lebih seru belajar berdua!</div>
+          </div>
+          <div class="tiers">
+            <div class="tier per-sesi">
+              <div class="tier-label">Per Sesi</div>
+              <div class="tier-price">85K</div>
+              <div class="tier-sub">Rp 85.000 / org</div>
+            </div>
+            <div class="tier bulanan">
+              <div class="tier-label">Paket Bulanan</div>
+              <div class="tier-price">640K</div>
+              <div class="tier-sub">8 sesi / org</div>
+              <div class="tier-save">✨ Hemat 6%</div>
+            </div>
+            <div class="tier pelajar">
+              <div class="tier-label">🎒 Pelajar</div>
+              <div class="tier-price">550K</div>
+              <div class="tier-sub">8 sesi / org</div>
+              <div class="tier-save">🏫 Hemat 19%</div>
+            </div>
+          </div>
+        </div>
+      </a>
+ 
+      <div class="squiggle">∿ ∿ ∿</div>
+      
+      <a href="https://wa.me/6282139265577?text=Halo%20saya%20ingin%20mendaftar%20Kelas%20Grup%20Ujian%20JLPT%20N5%20%26%20N4">
+        <div class="pkg grup-ujian">
+          <div class="pkg-deco">🌿</div>
+          <div class="pkg-top">
+            <div class="pkg-icon">📚</div>
+            <div class="pkg-title-wrap">
+              <span class="pkg-badge">Persiapan Ujian · Grup</span>
+              <div class="pkg-name">Kelas JLPT N5 & N4</div>
+              <div class="pkg-name-jp">試験準備クラス（グループ）</div>
+            </div>
+          </div>
+          <div class="feats">
+            <div class="feat"><span class="feat-dot"></span>Latihan soal terstruktur (N5 & N4)</div>
+            <div class="feat"><span class="feat-dot"></span>Materi grammar & kosakata ujian</div>
+            <div class="feat"><span class="feat-dot"></span>Strategi menjawab soal bersama</div>
+            <div class="feat"><span class="feat-dot"></span>Belajar bareng makin semangat!</div>
+          </div>
+          <div class="tiers">
+            <div class="tier per-sesi">
+              <div class="tier-label">Per Sesi</div>
+              <div class="tier-price">75K</div>
+              <div class="tier-sub">Rp 75.000 / org</div>
+            </div>
+            <div class="tier bulanan">
+              <div class="tier-label">Paket Bulanan</div>
+              <div class="tier-price">560K</div>
+              <div class="tier-sub">8 sesi / org</div>
+              <div class="tier-save">✨ Hemat 7%</div>
+            </div>
+            <div class="tier pelajar">
+              <div class="tier-label">🎒 Pelajar</div>
+              <div class="tier-price">520K</div>
+              <div class="tier-sub">8 sesi / org</div>
+              <div class="tier-save">🏫 Hemat 13%</div>
+            </div>
+          </div>
+        </div>
+      </a>
+ 
+    </div>
+ 
+    <!-- INFO STRIP -->
     <div class="info-strip">
       <div class="info-item">
         <span class="info-emoji">⏱️</span>
@@ -490,12 +590,26 @@
       </div>
     </div>
   </div>
-
+ 
+  <!-- FOOTER -->
   <div class="footer">
-    <span class="footer-text">Les Privat Bahasa Jepang · Online 🌸</span>
+    <div class="footer-brand">
+      <span class="footer-flower">🌸</span>
+      <span class="footer-text"><span>Mokuren</span> · Les Bahasa Jepang bareng Mulan</span>
+    </div>
     <span class="footer-jp">よろしくお願いします！</span>
   </div>
-
+ 
 </div>
+ 
+<script>
+  function switchTab(tab) {
+    document.querySelectorAll('.tab-btn').forEach((b, i) => {
+      b.classList.toggle('active', (i === 0 && tab === 'privat') || (i === 1 && tab === 'grup'));
+    });
+    document.getElementById('tab-privat').classList.toggle('active', tab === 'privat');
+    document.getElementById('tab-grup').classList.toggle('active', tab === 'grup');
+  }
+</script>
 </body>
 </html>
